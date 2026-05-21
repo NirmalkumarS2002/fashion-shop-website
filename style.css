@@ -1,0 +1,189 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+    background: gray;
+}
+
+.logo img {
+    width: clamp(130px, 18vw, 200px);
+}
+
+#Header a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-family: "Noto Sans", sans-serif;
+
+}
+
+.toggle-btn,
+.close-btn {
+    display: none;
+}
+
+.menus {
+    display: flex;
+    gap: 30px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.menus a:nth-child(3) .tag {
+    background: rgb(2, 131, 55);
+    padding: 2px 5px;
+    font-size: 13px;
+    color: white;
+}
+
+.menus a:nth-child(4) .tag {
+    background: rgb(255, 0, 179);
+    padding: 2px 5px;
+    font-size: 13px;
+    color: white;
+}
+
+.navbarsec2 {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    border: 2px solid rgba(0, 0, 0, 0.473);
+    padding: 5px 10px;
+    font-size: clamp(16px,1.8vw,20px);
+    background: white;
+}
+
+.searchbar input {
+    border: none;
+    outline: none;
+    width: 100%;
+
+}
+.icons {
+    display: flex;
+    align-items: center;
+    font-size: clamp(16px,2vw,22px);
+}
+
+.icons a {
+    padding: 0px 10px;
+    position: relative;
+
+}
+
+.icons .badge {
+    background: black;
+    color: white;
+    padding: 2px;
+    border-radius: 50%;
+    font-size: clamp(9px,1.2vw,13px);
+    position: absolute;
+     top: -8px;
+    right: -5px;
+}
+
+@media (max-width:1420px) {
+
+    .searchbar input {
+          display: none;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 5px 0px;
+    background: transparent;
+}
+    
+}
+
+ @media (max-width:1250px) {
+
+    #Header{
+
+        justify-content: flex-start;
+        padding:  10px 20px;
+    }
+    .menus{
+        display: none;
+    }
+
+    .toggle-btn{
+        display: block;
+        order: 1;
+        font-size:  clamp(16px,1.7vw,20px);
+        font-weight: bold;
+    }
+
+     .logo{
+        order: 2;
+        padding: 0 10px;
+        margin-right: auto;
+     }
+
+     .navbarsec2{
+        order: 3;
+        
+     }
+     
+} 
+
+@media (max-width:450px) {
+
+    
+    #Header{
+        gap: 0;
+        justify-content: flex-start;
+        padding:  10px 5px;
+    }
+
+      .logo{
+        order: 2;
+        margin-left: 10px;
+        padding: 0 0px;
+        margin-right: none;
+     }
+
+     .searchbar {
+    padding: 5px 0px;
+     }
+
+     .icons a {
+    padding: 0px 8px;
+    position: relative;
+
+}
+
+
+     .searchbar {
+    padding: 5px 0px;
+     }
+
+     .navbarsec2{
+        gap: 0;
+        margin-right: 10px;
+        
+     }
+}
+
