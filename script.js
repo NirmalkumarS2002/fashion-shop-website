@@ -1,59 +1,47 @@
-let hero=document.querySelector(".heroSection")
-let images=["./src/home.webp","./src/home1.webp"]
-let herocontent=document.querySelectorAll(".heroContent")
-let index=0
+let hero = document.querySelector(".heroSection")
+let images = ["./src/home.webp", "./src/home1.webp"]
+let herocontent = document.querySelectorAll(".heroContent")
+let index = 0
 
-setInterval(()=>{
-
-    index++
-    if(index>=images.length){
-        index=0
-    }
-
-    hero.style.backgroundImage=`url(${images[index]})`
-
-    herocontent.forEach((items)=>{
+function changeSlide() {
+    hero.style.backgroundImage = `url(${images[index]})`
+    herocontent.forEach((items) => {
         items.classList.remove("active")
     })
+  // animation restart
+    void herocontent[index].offsetWidth
     herocontent[index].classList.add("active")
+    hero.style.backgroundPosition = "top center"
+}
 
 
-},3000)
-
-
-// 
-let left =document.querySelector(".left")
-
-left.addEventListener("click",()=>{
-    
+// Auto Slide
+setInterval(() => {
     index++
-    if(index>=images.length){
-        index=0
+    if (index >= images.length) {
+        index = 0
     }
+    changeSlide()
+}, 3000)
 
-    hero.style.backgroundImage=`url(${images[index]})`
 
-    herocontent.forEach((items)=>{
-        items.classList.remove("active")
-    })
-    herocontent[index].classList.add("active")
-
+// Left Button
+let left = document.querySelector(".left")
+left.addEventListener("click", () => {
+    index++
+    if (index >= images.length) {
+        index = 0
+    }
+    changeSlide()
 })
 
-let right =document.querySelector(".right")
 
-right.addEventListener("click",()=>{
-    
+// Right Button
+let right = document.querySelector(".right")
+right.addEventListener("click", () => {
     index--
-    if(index<0){
-        index=images.length-1
+    if (index < 0) {
+        index = images.length - 1
     }
-
-    hero.style.backgroundImage=`url(${images[index]})`
-
-    herocontent.forEach((items)=>{
-        items.classList.remove("active")
-    })
-    herocontent[index].classList.add("active")
-
+    changeSlide()
 })
