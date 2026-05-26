@@ -1024,7 +1024,7 @@
    }
 
     .dealratings span{
-        color: yellow;
+        color: rgba(255, 208, 0, 0.705);
     }
 
     .dealratings{
@@ -1064,6 +1064,129 @@
   }
   }
 
+  /* sunglassed */
+
+  .glasswraper{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   padding: 5% 15%;
+    gap: 40px;
+  }
+
+  .glass{
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .glass img::before{
+    content: "";
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .glass img{
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    height: clamp(350px,40vw,500px);
+  }
+
+  .glass img::before:hover{
+    transform: scale(1.1);
+  }
+  .glasscontent{
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .glasscontent h2{
+    font-size: clamp(20px,2.5vw,30px);
+    margin-block: 10px;
+    line-height: 1.5;
+  }
+
+  .glasscontent p{
+    padding: 0 20px;
+    font-size: clamp(15px,1.6vw,17px);
+    max-width: 500px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0 auto;
+     margin-bottom: 15px;
+  }
+
+  .glasscontent a{
+    font-size: clamp(16px,1.7vw,19px);
+    color: black;
+  }
+
+  @media (max-width:670px) {
+
+    .glasswraper{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+    
+  }
+
+  @media (max-width:1022px) {
+      .glasswraper{
+   padding: 5% 5%;
+
+  }
+  }
+
+  /* claint box */
+
+  .claint{
+    display: flex;
+    width: 100%;
+    padding-block: 5%;
+  }
+
+  .claintbox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex-grow: 1;
+  }
+
+  .claintimage{
+    flex-grow: 1;
+    background: red;
+  }
+
+  .claintimage img{
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+
+
+  .claintbox h2{
+    font-size: 40px;
+  }
+
+  .claintbox p{
+    font-size: 20px;
+    max-width: 750px;
+    text-align: center;
+    line-height: 2;
+  }
+
+  .claintbox h5{
+    font-size: 22px;
+  }
+
+  .claintbox h6{
+    font-size: 20px;
+  }
   
 
 
