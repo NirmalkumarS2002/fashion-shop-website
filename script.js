@@ -107,3 +107,31 @@ btn1.addEventListener("click",()=>{
     btn2.classList.remove("active")
 
 })
+
+
+// gallery
+
+let gallerywraper = document.querySelector(".gallerywraper")
+
+let galleft = document.querySelector(".galleft")
+let galright = document.querySelector(".galright")
+
+
+galright.addEventListener("click",()=>{
+
+    gallerywraper.scrollBy({
+        left: 400,
+        behavior:"smooth"
+    })
+
+})
+
+
+galleft.addEventListener("click",()=>{
+
+    gallerywraper.scrollBy({
+        left: -400,
+        behavior:"smooth"
+    })
+
+})
